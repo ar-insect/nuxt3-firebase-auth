@@ -1,12 +1,15 @@
 {
   "license": "MIT",
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "nuxi preview"
+    "dev": "nuxi dev --port=2000 --mode dev",
+    "build-test": "nuxi build --mode test",
+    "build-pre": "nuxi build --mode pre",
+    "build-production": "nuxi build --mode production",
+    "preview": "nuxi preview --port 2002"
   },
   "devDependencies": {
-    "nuxt": "^3.4.3"
+    "nuxt": "^3.4.3",
+    "vite": "^4.4.9"
   },
   "dependencies": {
     "@vee-validate/rules": "~4.9.0",
