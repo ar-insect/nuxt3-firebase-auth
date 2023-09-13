@@ -52,6 +52,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+
 import { Form } from 'vee-validate'
 import '~/utils/vee-validate-rules'
 import { User } from '~/models/User'

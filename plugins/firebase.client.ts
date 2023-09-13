@@ -5,9 +5,16 @@ import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
   const { firebase } = config.public
-  const app = initializeApp({ ...firebase })
-  const auth = getAuth(app)
-
+  let app: any
+  let auth = {}
+  try {
+    app = initializeApp({ ...firebase })
+    auth = getAuth(app)
+  } catch(e) {
+    console.error(e)
+    app = null
+  }
+  
   return {
     provide: {
       firebaseApp: app,

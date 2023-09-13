@@ -60,6 +60,10 @@ export default defineNuxtConfig({
     shim: false
   },
   build: {
-    transpile: ['primevue']
+    transpile: ['primevue'],
+    // extend(config: any, ctx: any) {
+    //   const path = require('path')
+    //   config.devtool = '#source-map'
+    // }
   }
 })
