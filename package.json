@@ -8,13 +8,14 @@
     "preview": "nuxi preview --port 2002"
   },
   "devDependencies": {
-    "nuxt": "^3.4.3",
     "vite": "^4.4.9"
   },
   "dependencies": {
     "@vee-validate/rules": "~4.9.0",
+    "axios": "^1.5.0",
     "firebase": "^9.21.0",
     "firebase-admin": "^11.8.0",
+    "nuxt": "^3.4.3",
     "primeflex": "~3.3.0",
     "primeicons": "^6.0.0",
     "primevue": "~3.28.0",

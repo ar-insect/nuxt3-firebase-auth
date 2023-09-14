@@ -59,7 +59,7 @@ import { User } from '~/models/User'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import TextInput from '~/components/TextInput.vue'
 
-const { $toast, $firebaseAuth } = useNuxtApp()
+const { $toast, $firebaseAuth, $http } = useNuxtApp()
 const user$ = useUser()
 const disabled = ref(false)
 const signinForm = ref({ email: '', password: '' })
@@ -92,6 +92,11 @@ const signin = async () => {
 function onSubmit({ email = '', password = '' }) {
   signinForm.value = { email, password }
   signin()
+  $http.get('/api/hello', {params: {email:email}}).then(res => {
+    console.log(res)
+  }, err => {
+    console.log(err)
+  })
 }
 
 function onInvalidSubmit() {

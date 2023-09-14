@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     authDomain: process.env.authDomain,
     projectId: process.env.projectId,
     public: {
+      ...envData,
       firebase: {
         apiKey: process.env.apiKey,
         authDomain: process.env.authDomain,
@@ -54,16 +55,17 @@ export default defineNuxtConfig({
     }
   },
   vite: {
-    envDir: '~/env', // 指定env文件夹
+    envDir: '~/env', // 指定env目录
   },
   typescript: {
     shim: false
   },
   build: {
     transpile: ['primevue'],
-    // extend(config: any, ctx: any) {
-    //   const path = require('path')
-    //   config.devtool = '#source-map'
+    /*
+    ** You can extend webpack config here
+    */
+    // extend(config, ctx) {
     // }
   }
 })
